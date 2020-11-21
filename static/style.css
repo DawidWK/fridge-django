@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}  
+
+.ceiling {
+    height: 200px;
+}
+
+.fridge {
+    background: #E3E3E3;
+    min-height: calc(100vh - 200px);
+    box-shadow: 0px 2px 6px;
+}
+
+.my-wrapper {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+
+}
+.note {
+    background-color: #FFF891;
+    position: relative; 
+    box-shadow: 0px 2px 6px;
+    -ms-flex: 23%; /* IE10 */
+    flex: 23%;
+    max-width: 23%;
+    padding: 10px;
+    margin: 1%;
+    min-height: 150px;
+}
+
+.new-note {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    -ms-flex: 23%; /* IE10 */
+    flex: 23%;
+    max-width: 23%;
+    padding: 10px;
+    margin: 1%;
+    min-height: 200px;
+}
+.plus {
+    font-size: 150px;
+    color:#C8C3C3;
+}
+
+.content-text {
+    padding-bottom: 10px;
+}
+
+hr {
+    border-top: 1px solid black; 
+}
+
+.my-modal {
+    top: 50px !important;
+    padding: 5px;
+}
+
+.my-button {
+    padding-left: 200px;
+    position: relative;
+    right: 0px;
+}
+
+.button-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.x-button {
+    position: absolute;
+    right: 0px;
+
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+@media only screen and (max-width: 990px) {
+    .note {
+        -ms-flex: 30%; /* IE10 */
+        flex: 30%;
+        max-width: 30%;
+        min-height: 150px;
+    }
+    
+    .new-note {
+        -ms-flex: 30%; /* IE10 */
+        flex: 30%;
+        max-width: 30%;
+        min-height: 200px;
+    }
+    .plus {
+        font-size: 120px;
+    }
+  }
+
+@media only screen and (max-width: 550px) {
+    .note {
+        -ms-flex: 47%; /* IE10 */
+        flex: 47%;
+        max-width: 47%;
+        min-height: 150px;
+    }
+    
+    .new-note {
+        -ms-flex: 47%; /* IE10 */
+        flex: 47%;
+        max-width: 47%;
+        min-height: 170px;
+    }
+    .plus {
+        font-size: 75px;
+    }
+  }

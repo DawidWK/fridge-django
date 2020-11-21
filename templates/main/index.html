@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    home
+{% endblock title %}
+
+{% block content %}
+<div class="ui modal my-modal">
+    <i class="close icon"></i>
+    <div class="header">
+      Add Note
+    </div>
+      <div class="description">
+            <form class="ui form" action='' method="POST">
+              {% csrf_token %}
+
+              {{form.as_p}}
+              <div class="button-wrap">
+                <button type="submit" class="ui positive button my-button">Add</button>
+              </div>
+            </form>
+      </div>
+    
+    </div>
+</div>
+
+<div class='ui container fridge'>
+    <div class="my-wrapper">
+            <button class="new-note" id='modal-btn'>
+                <h1 class="plus">+</h1>
+            </button>
+        {% for note in notes %}
+        <div class="note">
+          <form action="/delete/" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="note-id" value="{{note.id}}"/>
+            <button type="submit" class="x-button">
+              <i class="x icon"></i>
+            </button>
+          </form>
+            {% if note.recipent %}
+            <p class="header-text">To: {{ note.recipent }}</p>
+            <hr>
+            {% else %}
+            <p class="header-text">To: Family</p>
+            <hr>
+            {% endif %}
+            <h5 class="content-text"> {{ note.content }}</h5>
+            <hr>
+            <p class="footer-text">From: {{ note.author }}, {{ note.created.date }}, {{note.importance}}</p>
+        </div>      
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
